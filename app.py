@@ -9,13 +9,15 @@ def main():
   
 #   s1 = Source("The News Minute", "tit", "aut", "201", "the")
 #   print(s1)
-  a1 = extractArticle("https://www.thenewsminute.com/article/rare-surgery-chennai-doctors-extract-526-teeth-7-year-olds-mouth-106448")
-  print(a1)
-
-  print(extractLinks("https://www.thenewsminute.com/section/Tamil%20Nadu"))
+#   a1 = extractArticle("https://www.thenewsminute.com/article/rare-surgery-chennai-doctors-extract-526-teeth-7-year-olds-mouth-106448")
+#   print(a1)
   
-
-
+  counter = 0
+  while (counter !=  -1):
+    for l in extractLinks("https://www.thenewsminute.com/section/Tamil%20Nadu?page=" + str(counter)):
+        print(extractArticle("https://www.thenewsminute.com" + l))
+    counter = counter + 1
+    
 def extractLinks(ref):
   page = urlopen(ref)
   content = ""
