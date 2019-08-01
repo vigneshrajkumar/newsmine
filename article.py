@@ -7,4 +7,4 @@ class Article:
     self.reference = reference
 
   def __str__(self):
-      return "{ " + self.title + " }"
+      return "{ TITLE: " + self.title[:20] + ".. ; CONTENT: " + self.content[:30] +".. ; BY: " + self.author  +  "; DATE: "+ self.published + "}"
